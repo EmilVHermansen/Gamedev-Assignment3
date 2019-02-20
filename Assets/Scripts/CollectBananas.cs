@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class CollectBananas : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class CollectBananas : MonoBehaviour
             Destroy(gameObject);
             if (col.gameObject.tag == "Player")
             {
+                globalBananaCounter.transform.DOShakePosition(1f);
                 globalBananaCounter.increment();
             }
             haveIncrement = true;
